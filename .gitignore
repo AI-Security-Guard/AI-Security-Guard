@@ -3,3 +3,26 @@
 *.db
 server/uploaded_videos/
 *.pyc
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pkl
+*.pt
+
+# Virtualenv
+venv/
+.env/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
