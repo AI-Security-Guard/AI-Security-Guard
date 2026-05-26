@@ -17,3 +17,12 @@ venv/
 =======
 aivenv
 >>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
+
+ai_venv/
+ai/ai_venv/
+server/venv/
+ai/server/venv/
+venv/
+.venv/
+__pycache__/
+*.pyc
