@@ -4,4 +4,12 @@
 server/uploaded_videos/
 *.pyc
 
-aivenv
+aivenvnode_modules/
+.cache/
+venv/
+.venv/
+__pycache__/
+node_modules/
+client/node_modules/
+.venv/
+venv/
