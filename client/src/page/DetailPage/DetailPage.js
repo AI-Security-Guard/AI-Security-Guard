@@ -1,6 +1,7 @@
 import * as D from "./Detail.style.js";
 import Header from "../../component/Header/Header.js";
 import ShortButton from "../../component/ShortButton/ShortButton.js";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 
@@ -62,6 +63,23 @@ function DetailPage() {
             }
         })();
     }, [entry, clipId]);
+=======
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+function DetailPage() {
+    const navigate = useNavigate();
+
+    //useState 초기값은 이후 수정 필요
+    const [video, setVideo] = useState("/video.mp4");
+    const [date, setDate] = useState("2025/04/28/23:00:00");
+    const [type, setType] = useState("살인");
+    const [coordinate, setCoordinate] = useState("(123,123231)");
+
+    const GoBackButtonClick = () => {
+        navigate(-1);
+    };
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
     return (
         <>
@@ -70,6 +88,7 @@ function DetailPage() {
                 <D.Container>
                     <D.Detail>
                         <D.TempVideo controls>
+<<<<<<< HEAD
                             <source src={videoPath} type="video/mp4" />
                         </D.TempVideo>
                         <D.DetailContent>
@@ -79,6 +98,16 @@ function DetailPage() {
                         </D.DetailContent>
                     </D.Detail>
 
+=======
+                            <source src={video} type="video/mp4" />
+                        </D.TempVideo>
+                        <D.DetailContent>
+                            <D.Date>발생시기: {date}</D.Date>
+                            <D.Type>수상행동 유형: {type}</D.Type>
+                            <D.Location>최초 발생 위치: {coordinate}</D.Location>
+                        </D.DetailContent>
+                    </D.Detail>
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                     <D.ButtonContainer>
                         <ShortButton txt="뒤로가기" onClick={GoBackButtonClick} />
                     </D.ButtonContainer>

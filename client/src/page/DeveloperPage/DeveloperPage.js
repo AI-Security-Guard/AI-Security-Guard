@@ -11,6 +11,7 @@ function DeveloperPage() {
         {
             title: "개발자",
             members: [
+<<<<<<< HEAD
                 { name: "변무혁", tags: ["AI"], intro: "DORO" },
                 {
                     name: "박소정",
@@ -34,6 +35,22 @@ function DeveloperPage() {
             title: "프로젝트 설명",
             content:
                 "AI 방범대 사이트는 영상 분석 기술을 기반으로,\nCCTV나 녹화 영상을 자동으로 처리하여 사람의 행동을 인식하고 \n그중 이상 징후나 위험 행동을 보이는 거동 수상자를 탐지하는 서비스입니다.\n\n영상 프레임 단위 분석을 통해 인물의 움직임과 자세를 추적하고,\nAI 모델이 비정상적인 행동(폭행, 추격, 쓰러짐 등)을 판별하며,\n감지된 구간에 대한 상세 정보를 시각화하여 관리자에게 제공합니다.\n\n",
+=======
+                { name: "변무혁", tags: ["AI"], intro: "소개" },
+                {
+                    name: "박소정",
+                    tags: ["frontend", "backend"],
+                    intro: "안녕히 계세요~ 전 이 대학교의 모든 굴레와 속박을 벗어던지고 제 행복을 찾아 떠납니다.",
+                },
+                { name: "남동현", tags: ["frontend"], intro: "소개" },
+                { name: "전한나", tags: ["AI", "배포"], intro: "소개" },
+                { name: "김효지", tags: ["AI"], intro: "소개" },
+            ],
+        },
+        {
+            title: "개발 목표",
+            content: `AI방범대 사이트는 영상을 분석하여\n거동 수상자를 감지하는 서비스를 제공합니다.`,
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
         },
     ];
 

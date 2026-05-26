@@ -1,5 +1,6 @@
 # server/models.py
 from flask_sqlalchemy import SQLAlchemy
+<<<<<<< HEAD
 from datetime import datetime
 from sqlalchemy import (
     Column,
@@ -12,11 +13,14 @@ from sqlalchemy import (
     DateTime,
 )
 from sqlalchemy.orm import relationship
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
 db = SQLAlchemy()
 
 
 class User(db.Model):
+<<<<<<< HEAD
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
@@ -24,6 +28,12 @@ class User(db.Model):
     password = Column(String(200), nullable=False)
     video = Column(String(200), nullable=True)
     original_video = Column(String, nullable=True)
+=======
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)
+    video = db.Column(db.String(200), nullable=True)
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
     def to_dict(self):
         return {
@@ -31,6 +41,7 @@ class User(db.Model):
             "username": self.username,
             "video": self.video,
         }
+<<<<<<< HEAD
 
 
 class Job(db.Model):
@@ -118,3 +129,5 @@ class Clip(db.Model):
             "thumbnail": self.thumbnail,
             "created_at": self.created_at.isoformat() if self.created_at else None,
         }
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f

@@ -2,7 +2,10 @@ import os
 from flask import Blueprint, request, jsonify
 from models import User
 from flask import send_file
+<<<<<<< HEAD
 from flask_jwt_extended import jwt_required, get_jwt_identity
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
 
 bring_video_bp = Blueprint("bringVideo", __name__)
@@ -10,7 +13,10 @@ UPLOAD_FOLDER = "uploaded_videos"
 
 
 @bring_video_bp.route("/bringVideo", methods=["GET"])
+<<<<<<< HEAD
 @jwt_required()
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 def bring_video():
     username = request.args.get("username")
 

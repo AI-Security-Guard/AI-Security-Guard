@@ -3,16 +3,22 @@ import Header from "../../component/Header/Header";
 import * as S from "./TermsPage.style";
 import { useNavigate } from "react-router-dom";
 import ShortButton from "../../component/ShortButton/ShortButton.js";
+<<<<<<< HEAD
 import CustomModal from "../../component/CustomModal/CustomModal.js";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import axios from "axios";
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
 function TermsPage() {
     const [allAgree, setAllAgree] = useState(false);
     const [termsAgree, setTermsAgree] = useState(false);
     const [privacyAgree, setPrivacyAgree] = useState(false);
+<<<<<<< HEAD
     const [modalOpen, setModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     const navigate = useNavigate();
 
     const handleAllAgree = () => {
@@ -32,6 +38,7 @@ function TermsPage() {
         }
     };
 
+<<<<<<< HEAD
     const handleSubmit = async () => {
         // 필수 약관 체크 안 하면 경고
         if (!termsAgree || !privacyAgree) {
@@ -66,6 +73,10 @@ function TermsPage() {
             console.error("회원가입 실패:", err);
             alert("회원가입 중 오류가 발생했습니다.");
         }
+=======
+    const handleSubmit = () => {
+        navigate("/render");
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     };
 
     return (
@@ -650,6 +661,7 @@ AI방범대에서는 기본적인 회원 서비스 제공을 위한 필수정보
                     </S.ButtonGroup>
                 </S.Box>
             </S.Container>
+<<<<<<< HEAD
             <CustomModal
                 open={modalOpen}
                 onClose={() => setModalOpen(false)}
@@ -666,6 +678,8 @@ AI방범대에서는 기본적인 회원 서비스 제공을 위한 필수정보
                     },
                 ]}
             />
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
         </>
     );
 }

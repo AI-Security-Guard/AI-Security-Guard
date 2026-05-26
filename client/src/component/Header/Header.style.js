@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 import styled from 'styled-components';
+=======
+import styled from "styled-components";
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
 export const HeaderContainer = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
+<<<<<<< HEAD
     height: 110px;
+=======
+    height: 10%;
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     display: flex;
     justify-content: space-between;
     align-items: center;

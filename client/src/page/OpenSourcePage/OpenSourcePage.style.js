@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const OpenSourceContainer = styled.div`
+<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,10 +31,15 @@ export const OpenSourceContent = styled.div`
     padding: 50px;
     margin-top: 70px;
     margin-bottom: 60px;
+=======
+    min-height: 100vh;
+    width: 100%;
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     transition: all 0.3s ease;
@@ -91,4 +97,13 @@ export const SourceItem = styled.div`
 export const IconWrapper = styled.div`
     font-size: 1.8rem;
     margin-top: 4px;
+=======
+`;
+
+export const OpenSourceContent = styled.div`
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 `;

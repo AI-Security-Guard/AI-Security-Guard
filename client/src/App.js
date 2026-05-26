@@ -19,8 +19,13 @@ function App() {
                     <Routes>
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/" element={<MainPage />} />
+<<<<<<< HEAD
                         <Route path="/List/:jobId" element={<ListPage />} />
                         <Route path="/Detail/:clipId" element={<DetailPage />} />
+=======
+                        <Route path="/List" element={<ListPage />} />
+                        <Route path="/Detail" element={<DetailPage />} />
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                         <Route path="/termspage" element={<TermsPage />} />
                         <Route path="/register" element={<RegisterPage />} />
                         <Route path="/render" element={<RenderPage />} />

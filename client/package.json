@@ -14,7 +14,10 @@
     "axios": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-icons": "^5.5.0",
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     "react-router-dom": "^7.4.1",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.3",

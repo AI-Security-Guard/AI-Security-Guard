@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 import {
     ListContainer,
     UnconfirmedCountMessage,
@@ -16,6 +20,7 @@ import {
 } from "./ListPage.style.js";
 import Header from "../../component/Header/Header.js";
 import Sidebar from "../../component/Sidebar/Sidebar.js";
+<<<<<<< HEAD
 import { useNavigate, useParams } from "react-router-dom";
 function ListPage() {
     const { jobId } = useParams();
@@ -79,6 +84,32 @@ function ListPage() {
             await fetchClipsByJobId(latestData.job_id);
         })().catch((e) => console.error(e));
     }, [jobId]);
+=======
+import { useNavigate } from "react-router-dom";
+
+function ListPage() {
+    const navigate = useNavigate();
+
+    const entries = [
+        { date: "2025/05/07", message: "폭행", checked: true },
+        { date: "2025/05/05", message: "데이트폭력", checked: true },
+        { date: "2025/05/06", message: "도난", checked: false },
+        { date: "2025/05/07", message: "폭행", checked: true },
+        { date: "2025/05/08", message: "사고", checked: false },
+        { date: "2025/05/09", message: "기물파손", checked: false },
+        { date: "2025/05/10", message: "침입", checked: false },
+        { date: "2025/05/11", message: "폭행", checked: true },
+        { date: "2025/05/12", message: "투기", checked: true },
+        { date: "2025/05/08", message: "사고", checked: false },
+        { date: "2025/05/09", message: "기물파손", checked: false },
+        { date: "2025/05/10", message: "침입", checked: false },
+        { date: "2025/05/11", message: "폭행", checked: true },
+        { date: "2025/05/12", message: "투기", checked: true },
+    ];
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8;
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
     const handlePageChange = (event, page) => {
         setCurrentPage(page);
@@ -90,6 +121,7 @@ function ListPage() {
     const currentEntries = sortedEntries.slice(indexOfFirstEntry, indexOfLastEntry);
     const unconfirmedCount = entries.filter((entry) => !entry.checked).length;
 
+<<<<<<< HEAD
     const handleClick = async (entry) => {
         try {
             // 1) 서버에 체크 반영 (확정형)
@@ -110,6 +142,8 @@ function ListPage() {
         }
     };
 
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     return (
         <>
             <ListContainer>
@@ -119,6 +153,7 @@ function ListPage() {
                     <UnconfirmedCountMessage>
                         확인하지 않은 거동 수상자 목록이 {unconfirmedCount}개 있습니다.
                     </UnconfirmedCountMessage>
+<<<<<<< HEAD
 
                     <SuspectContainer>
                         <SuspectColumn>
@@ -130,6 +165,13 @@ function ListPage() {
                                         src={entry.thumbPath ? `${API_BASE}${entry.thumbPath}` : "/image/poto.png"}
                                         alt="썸네일"
                                     />
+=======
+                    <SuspectContainer>
+                        <SuspectColumn>
+                            {currentEntries.slice(0, 4).map((entry, index) => (
+                                <SuspectEntry key={index} onClick={() => navigate("/Detail")}>
+                                    <SuspectPoto src="/image/poto.png" alt="임시 이미지" />
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                                     <SuspectDetail>
                                         <IncidentInfo>
                                             <Date>{entry.date}</Date>
@@ -143,6 +185,7 @@ function ListPage() {
                                 </SuspectEntry>
                             ))}
                         </SuspectColumn>
+<<<<<<< HEAD
 
                         <SuspectColumn>
                             {currentEntries.slice(4, 8).map((entry) => (
@@ -152,6 +195,12 @@ function ListPage() {
                                         src={entry.thumbPath ? `${API_BASE}${entry.thumbPath}` : "/image/poto.png"}
                                         alt="썸네일"
                                     />
+=======
+                        <SuspectColumn>
+                            {currentEntries.slice(4, 8).map((entry, index) => (
+                                <SuspectEntry key={index} onClick={() => navigate("/Detail")}>
+                                    <SuspectPoto src="/image/poto.png" alt="임시 이미지" />
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                                     <SuspectDetail>
                                         <IncidentInfo>
                                             <Date>{entry.date}</Date>
@@ -166,7 +215,10 @@ function ListPage() {
                             ))}
                         </SuspectColumn>
                     </SuspectContainer>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                     <ListPagination
                         count={Math.ceil(sortedEntries.length / itemsPerPage)}
                         page={currentPage}

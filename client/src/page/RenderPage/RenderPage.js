@@ -9,6 +9,7 @@ import * as D from "../../component/CustomModal/CustomModal.style";
 import WarningAmberRoundedIcon from "@mui/icons-material/WarningAmberRounded";
 import axios from "axios";
 
+<<<<<<< HEAD
 function ProgressCircle({
     value,
     size = 120,
@@ -65,6 +66,8 @@ function ProgressCircle({
     );
 }
 
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 function RenderPage() {
     const fileInputRef = useRef(null);
     const [videoSrc, setVideoSrc] = useState(null);
@@ -72,6 +75,7 @@ function RenderPage() {
     const [modalState, setModalState] = useState("idle");
     const [modalType, setModalType] = useState("none");
     const [videoPath, setVideoPath] = useState(null);
+<<<<<<< HEAD
     const [progress, setProgress] = useState(0);
     const [jobId, setJobId] = useState(null);
     const intervalRef = useRef(null);
@@ -82,6 +86,8 @@ function RenderPage() {
             intervalRef.current = null;
         }
     };
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
     const navigate = useNavigate();
 
@@ -91,6 +97,7 @@ function RenderPage() {
 
         const fetchSavedVideo = async () => {
             try {
+<<<<<<< HEAD
                 const user = JSON.parse(localStorage.getItem("user"));
                 const username = user?.username;
                 if (!username) return;
@@ -119,6 +126,30 @@ function RenderPage() {
                 console.error("새로고침 시 영상 불러오기 실패:", err?.response?.data || err?.message);
             }
         };
+=======
+                const response = await axios.get("http://127.0.0.1:5000/bringVideo", {
+                    params: { username },
+                    responseType: "blob",
+                });
+
+                const contentType = response.headers["content-type"];
+                if (contentType && contentType.includes("application/json")) {
+                    const text = await response.data.text();
+                    const json = JSON.parse(text);
+                    if (json.hasVideo === false) {
+                        return;
+                    }
+                } else {
+                    const blob = new Blob([response.data], { type: "video/mp4" });
+                    const videoURL = URL.createObjectURL(blob);
+                    setVideoSrc(videoURL);
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
         fetchSavedVideo();
     }, []);
 
@@ -132,6 +163,7 @@ function RenderPage() {
             const videoURL = URL.createObjectURL(file);
             setVideoSrc(videoURL);
 
+<<<<<<< HEAD
             const formData = new FormData();
             formData.append("video", file);
             const token = localStorage.getItem("access_token");
@@ -141,12 +173,47 @@ function RenderPage() {
                 });
                 console.log("업로드 성공:", response.data);
                 setVideoPath(response.data.user.full_path);
+=======
+            const user = JSON.parse(localStorage.getItem("user"));
+            const username = user?.username;
+            const formData = new FormData();
+            formData.append("username", username);
+            formData.append("video", file);
+
+            try {
+                const response = await axios.post("http://127.0.0.1:5000/uploadVideo", formData);
+                console.log("업로드 성공:", response.data);
+                setVideoPath(response.data.user.full_path); // ✅ 서버 저장 경로 추출
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
             } catch (err) {
                 console.error("업로드 실패:", err.response?.data || err.message);
             }
         }
     };
 
+<<<<<<< HEAD
+=======
+    // const handleDeleteVideo = () => {
+    //     setVideoSrc(null);
+    //     if (fileInputRef.current) {
+    //         fileInputRef.current.value = null;
+    //     }
+    // };
+
+    // const handleDeleteVideoClick = () => {
+    //     setModalType("deleteConfirm");
+    //     setModalOpen(true);
+    // };
+
+    // const handleGoAnalysis = () => {
+    //     setModalOpen(true);
+    //     setModalState("loading");
+
+    //     setTimeout(() => {
+    //         setModalState("done");
+    //     }, 3000); // 예시로 3초 후 완료로 변경
+    // };
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
     const handleDeleteVideo = async () => {
         const user = JSON.parse(localStorage.getItem("user"));
         const username = user?.username;
@@ -155,11 +222,21 @@ function RenderPage() {
             console.error("❌ username 없음");
             return;
         }
+<<<<<<< HEAD
         const token = localStorage.getItem("access_token");
         try {
             await axios.delete("http://127.0.0.1:5000/deleteVideo", {
                 data: { username },
                 headers: { Authorization: `Bearer ${token}` },
+=======
+
+        try {
+            await axios.delete("http://127.0.0.1:5000/deleteVideo", {
+                data: { username },
+                headers: {
+                    "Content-Type": "application/json",
+                },
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
             });
             console.log("✅ 영상 삭제 성공");
         } catch (err) {
@@ -175,6 +252,7 @@ function RenderPage() {
     };
 
     const handleGoAnalysis = async () => {
+<<<<<<< HEAD
         if (!videoPath) {
             console.error("❌ 서버 저장 경로(videoPath)가 없습니다.");
             return;
@@ -249,6 +327,23 @@ function RenderPage() {
             console.error("❌ 분석 요청 실패:", err?.response?.data || err?.message);
             setModalOpen(false);
             setModalState("idle");
+=======
+        setModalOpen(true);
+        setModalState("loading");
+        console.log(videoPath);
+        try {
+            const response = await axios.post("http://127.0.0.1:5001/analyze", {
+                video_path: videoPath, // 🔥 서버 내부 경로 전달
+            });
+
+            console.log("분석 시작됨:", response.data);
+            setModalState("done");
+        } catch (error) {
+            console.error("분석 요청 실패:", error.response?.data || error.message);
+            setModalState("idle");
+            setModalOpen(false);
+            setModalType("none");
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
         }
     };
 
@@ -256,13 +351,23 @@ function RenderPage() {
         <>
             <S.MainLayout>
                 <Header />
+<<<<<<< HEAD
                 <Sidebar jobId={jobId} />
+=======
+                <Sidebar />
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                 <S.ContentArea>
                     {!videoSrc && <S.PlusIcon src="/image/addToVideo.png" alt="영상 추가" onClick={handleIconClick} />}
                     {videoSrc && (
                         <>
+<<<<<<< HEAD
                             <S.VideoPlayer controls ref={videoRef} key={videoSrc}>
                                 <source src={videoSrc} type="video/mp4" />
+=======
+                            <S.VideoPlayer controls>
+                                <source src={videoSrc} type="video/mp4" />
+                                브라우저가 video 태그를 지원하지 않습니다.
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                             </S.VideoPlayer>
                             <S.ButtonWrapper>
                                 <ShortButton txt="분석하기" onClick={handleGoAnalysis} />
@@ -288,7 +393,10 @@ function RenderPage() {
             <CustomModal
                 open={modalOpen}
                 onClose={() => {
+<<<<<<< HEAD
                     stopPolling();
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                     setModalOpen(false);
                     setModalState("idle");
                     setModalType("none");
@@ -310,6 +418,7 @@ function RenderPage() {
                 icon={
                     modalType === "deleteConfirm" ? (
                         <WarningAmberRoundedIcon style={{ fontSize: 60, color: "#6E6E6E" }} />
+<<<<<<< HEAD
                     ) : modalState === "loading" ? (
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
                             <ProgressCircle value={progress} size={120} strokeWidth={12} />
@@ -318,6 +427,12 @@ function RenderPage() {
                     ) : (
                         <D.SpinnerWrapper>
                             <D.CheckIcon visible={true} />
+=======
+                    ) : (
+                        <D.SpinnerWrapper>
+                            <D.Spinner visible={modalState === "loading"} />
+                            <D.CheckIcon visible={modalState === "done"} />
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                         </D.SpinnerWrapper>
                     )
                 }
@@ -327,9 +442,13 @@ function RenderPage() {
                               {
                                   label: "취소",
                                   onClick: () => {
+<<<<<<< HEAD
                                       stopPolling();
                                       setModalOpen(false);
                                       setModalState("idle");
+=======
+                                      setModalOpen(false);
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                                       setModalType("none");
                                   },
                               },
@@ -347,7 +466,10 @@ function RenderPage() {
                               {
                                   label: "취소",
                                   onClick: () => {
+<<<<<<< HEAD
                                       stopPolling();
+=======
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                                       setModalOpen(false);
                                       setModalState("idle");
                                   },
@@ -359,7 +481,11 @@ function RenderPage() {
                                   onClick: () => {
                                       setModalOpen(false);
                                       setModalState("idle");
+<<<<<<< HEAD
                                       navigate(`/List/${jobId}`);
+=======
+                                      navigate("/List");
+>>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
                                   },
                               },
                               {
