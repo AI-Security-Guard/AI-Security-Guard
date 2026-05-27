@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 from flask import Blueprint, request, jsonify
 from models import db, User
 from flask_jwt_extended import create_access_token
-=======
-# server/auth/login.py
-from flask import Blueprint, request, jsonify
-from models import db, User  # DB에서 사용자 가져오기
->>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
 login_bp = Blueprint("login", __name__)
 
@@ -25,7 +19,6 @@ def login():
 
     # 사용자가 존재하고 비밀번호가 일치할 경우
     if user and user.password == password:
-<<<<<<< HEAD
         access_token = create_access_token(
             identity=user.username,
         )
@@ -39,8 +32,5 @@ def login():
             ),
             200,
         )
-=======
-        return jsonify({"message": "Login successful", "user": user.to_dict()}), 200
->>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
 
     return jsonify({"error": "Invalid credentials"}), 401

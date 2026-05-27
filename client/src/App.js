@@ -12,30 +12,25 @@ import RenderPage from "./page/RenderPage/RenderPage";
 import OpenSourcePage from "./page/OpenSourcePage/OpenSourcePage.js";
 
 function App() {
-    return (
-        <>
-            <Router>
-                <Background>
-                    <Routes>
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/" element={<MainPage />} />
-<<<<<<< HEAD
-                        <Route path="/List/:jobId" element={<ListPage />} />
-                        <Route path="/Detail/:clipId" element={<DetailPage />} />
-=======
-                        <Route path="/List" element={<ListPage />} />
-                        <Route path="/Detail" element={<DetailPage />} />
->>>>>>> c340771cceac8b3c06ccd51490051924e1055b2f
-                        <Route path="/termspage" element={<TermsPage />} />
-                        <Route path="/register" element={<RegisterPage />} />
-                        <Route path="/render" element={<RenderPage />} />
-                        <Route path="/Developer" element={<DeveloperPage />} />
-                        <Route path="/openSource" element={<OpenSourcePage />} />
-                    </Routes>
-                </Background>
-            </Router>
-        </>
-    );
+  return (
+    <>
+      <Router>
+        <Background>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<MainPage />} />
+            <Route path="/List/:jobId" element={<ListPage />} />
+            <Route path="/Detail/:clipId" element={<DetailPage />} />
+            <Route path="/termspage" element={<TermsPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/render" element={<RenderPage />} />
+            <Route path="/Developer" element={<DeveloperPage />} />
+            <Route path="/openSource" element={<OpenSourcePage />} />
+          </Routes>
+        </Background>
+      </Router>
+    </>
+  );
 }
 
 export default App;
