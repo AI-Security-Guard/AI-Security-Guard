@@ -102,3 +102,9 @@ CCTV 영상을 분석하여 폭력, 쓰러짐, 화재 등 이상 상황을 탐�
 
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)
 ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge\&logo=googledrive\&logoColor=white)
+
+---
+
+## 🏆 Awards
+
+- 2025 캡스톤디자인 장려상 수상
