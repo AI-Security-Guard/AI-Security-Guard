@@ -23,7 +23,7 @@ CCTV 영상을 분석하여 폭력, 쓰러짐, 화재 등 이상 상황을 탐�
 
 ## 👥 Team & Roles
 
-|            [변무혁](https://github.com/TIRIAS)           |            [박소정](https://github.com/sojeong0302)           |            [전한나](https://github.com/jdy031017js)           |            [김효지](https://github.com/kimhyoji)           |            [김동현](https://github.com/ehdgus5178)           |
+|            [변무혁](https://github.com/TIRIAS)           |            [박소정](https://github.com/sojeong0302)           |            [전한나](https://github.com/jdy031017js)           |            [김효지](https://github.com/kimhyoji)           |            [남동현](https://github.com/ndh5178)           |
 | :---------------------------------------------------: | :--------------------------------------------------------: | :--------------------------------------------------------: | :-----------------------------------------------------: | :-------------------------------------------------------: |
 | <img src="https://github.com/TIRIAS.png" width="80"/> | <img src="https://github.com/sojeong0302.png" width="80"/> | <img src="https://github.com/jdy031017js.png" width="80"/> | <img src="https://github.com/kimhyoji.png" width="80"/> | <img src="https://github.com/ehdgus5178.png" width="80"/> |
 |                     **팀장**<br/>**AI**                     |                 **프론트엔드**<br/>**백엔드**<br/>**UI/UX**                |                     **AI**<br/>**배포**                 |                      **AI**<br/>**백엔드**                    |                       **프론트엔드**<br/>**UI/UX**                         |
